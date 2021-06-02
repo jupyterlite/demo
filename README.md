@@ -8,6 +8,13 @@ JupyterLite deployed as a static site to GitHub Pages, for demo purposes.
 
 ![image](https://user-images.githubusercontent.com/591645/120502698-ef40b880-c3c2-11eb-881b-d64591130e40.png)
 
+## Requirements
+
+JupyterLite is being tested against modern web browsers:
+
+- Firefox 90+
+- Chromium 89+
+
 ## Usage
 
 This repository is meant to demo how to deploy JupyterLite to GitHub Pages, using the released prebuilt JupyterLite assets.
