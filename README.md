@@ -28,7 +28,11 @@ For more info, keep an eye on the JupyterLite documentation:
 
 ### Deploy a new version
 
-TODO
+In the deploy workflow, update the version of JupyterLite: 
+
+https://github.com/jtpio/jupyterlite-demo/blob/1cf3ac239a67a869418541654385d1905dfbb5ab/.github/workflows/deploy.yml#L19
+
+Then commit and push the changes. The site will be deployed on the next push to the `main` branch.
 
 ## Development
 
