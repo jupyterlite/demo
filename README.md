@@ -2,6 +2,10 @@
 
 JupyterLite deployed as a static site to GitHub Pages, for demo purposes.
 
+## ✨ Try it in your browser ✨
+
+➡️ **https://jtpio.github.io/jupyterlite-demo**
+
 ![image](https://user-images.githubusercontent.com/591645/120502698-ef40b880-c3c2-11eb-881b-d64591130e40.png)
 
 ## Usage
