@@ -27,6 +27,11 @@ jobs:
       - name: List the content of the app
         run: |
           tree app
+      - name: Upload the app
+        uses: actions/upload-artifact@v2
+        with:
+          name: app ${{ github.run_number }}
+          path: ./app
 
   deploy:
     if: github.ref == 'refs/heads/main'
