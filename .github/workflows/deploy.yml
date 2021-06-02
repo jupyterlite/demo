@@ -17,7 +17,7 @@ jobs:
       - name: Fetch the release
         run: |
           curl -L https://github.com/jtpio/jupyterlite/releases/download/v0.1.0a0/jupyterlite-app-0.1.0-alpha.0.tgz | tar -xz
-          mv package app
+          mv package dist
       - name: Copy the federated extensions
         run: |
           # TODO
@@ -26,24 +26,26 @@ jobs:
           # TODO
       - name: List the content of the app
         run: |
-          tree app
-      - name: Upload the app
+          tree dist
+      - name: Upload (dist)
         uses: actions/upload-artifact@v2
         with:
-          name: app ${{ github.run_number }}
-          path: ./app
+          name: jupyterlite-demo dist ${{ github.run_number }}
+          path: ./dist
 
   deploy:
     if: github.ref == 'refs/heads/main'
     needs: [build]
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
       - uses: actions/download-artifact@v2
         with:
-          name: app ${{ github.run_number }}
-          path: ./app
+          name: jupyterlite-demo dist ${{ github.run_number }}
+          path: ./dist
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           branch: gh-pages
-          folder: app
+          folder: dist
