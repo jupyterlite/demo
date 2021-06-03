@@ -23,7 +23,9 @@ jobs:
           # TODO
       - name: Copy the content
         run: |
-          # TODO
+          mkdir -p dist/api/contents/ dist/files
+          cp all.json dist/api/contents/
+          cp iris.csv dist/files
       - name: List the content of the app
         run: |
           tree dist
