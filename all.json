@@ -5,6 +5,18 @@
   "created": "2021-06-03T12:29:21.168844Z",
   "content": [
     {
+      "name": "2021-06-03-pydata-paris.ipynb",
+      "path": "2021-06-03-pydata-paris.ipynb",
+      "last_modified": "2021-06-02T13:31:25.442090Z",
+      "created": "2021-06-02T13:31:25.442090Z",
+      "content": null,
+      "format": null,
+      "mimetype": null,
+      "size": 11764,
+      "writable": true,
+      "type": "notebook"
+    },
+    {
       "name": "environment.yml",
       "path": "environment.yml",
       "last_modified": "2021-06-02T13:31:25.442090Z",
