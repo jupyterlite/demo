@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir -p dist/api/contents/ dist/files
           cp all.json dist/api/contents/
-          cp iris.csv dist/files
+          cp *.csv *.ipynb dist/files
       - name: List the content of the app
         run: |
           tree dist
