@@ -28,7 +28,7 @@ For more info, keep an eye on the JupyterLite documentation:
 
 ### Deploy a new version
 
-In the deploy workflow, update the version of JupyterLite: 
+In the deploy demo workflow (`deploy.yml`), update the version of JupyterLite: 
 
 https://github.com/jtpio/jupyterlite-demo/blob/1cf3ac239a67a869418541654385d1905dfbb5ab/.github/workflows/deploy.yml#L19
 
