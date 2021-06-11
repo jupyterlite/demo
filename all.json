@@ -1,73 +1,49 @@
 {
-  "name": "",
-  "path": "",
-  "last_modified": "2021-06-03T12:29:21.168844Z",
-  "created": "2021-06-03T12:29:21.168844Z",
   "content": [
     {
-      "name": "2021-06-03-pydata-paris.ipynb",
-      "path": "2021-06-03-pydata-paris.ipynb",
-      "last_modified": "2021-06-02T13:31:25.442090Z",
-      "created": "2021-06-02T13:31:25.442090Z",
       "content": null,
+      "created": "2021-06-11T06:27:08.935462+00:00",
       "format": null,
+      "last_modified": "2021-06-11T06:27:00.399244+00:00",
       "mimetype": null,
-      "size": 11764,
-      "writable": true,
-      "type": "notebook"
+      "name": "pyolite.ipynb",
+      "path": "pyolite.ipynb",
+      "size": 4715,
+      "type": "notebook",
+      "writable": true
     },
     {
-      "name": "environment.yml",
-      "path": "environment.yml",
-      "last_modified": "2021-06-02T13:31:25.442090Z",
-      "created": "2021-06-02T13:31:25.442090Z",
       "content": null,
+      "created": "2021-06-11T06:22:10.166566+00:00",
       "format": null,
-      "mimetype": null,
-      "size": 175,
-      "writable": true,
-      "type": "file"
-    },
-    {
-      "name": "jupyter-lite.json",
-      "path": "jupyter-lite.json",
-      "last_modified": "2021-06-02T13:50:17.374766Z",
-      "created": "2021-06-02T13:50:17.374766Z",
-      "content": null,
-      "format": null,
-      "mimetype": "application/json",
-      "size": 670,
-      "writable": true,
-      "type": "file"
-    },
-    {
-      "name": "README.md",
-      "path": "README.md",
-      "last_modified": "2021-06-02T15:14:08.380291Z",
-      "created": "2021-06-02T15:14:08.380291Z",
-      "content": null,
-      "format": null,
-      "mimetype": "text/markdown",
-      "size": 1559,
-      "writable": true,
-      "type": "file"
-    },
-    {
+      "last_modified": "2021-06-11T06:20:11.811375+00:00",
+      "mimetype": "text/csv",
       "name": "iris.csv",
       "path": "iris.csv",
-      "last_modified": "2021-06-03T12:26:45.155973Z",
-      "created": "2021-06-03T12:29:15.456812Z",
-      "content": null,
-      "format": null,
-      "mimetype": "text/csv",
       "size": 3712,
-      "writable": true,
-      "type": "file"
+      "type": "file",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2021-06-11T06:22:12.434177+00:00",
+      "format": null,
+      "last_modified": "2021-06-11T06:20:11.810308+00:00",
+      "mimetype": null,
+      "name": "2021-06-03-pydata-paris.ipynb",
+      "path": "2021-06-03-pydata-paris.ipynb",
+      "size": 11535,
+      "type": "notebook",
+      "writable": true
     }
   ],
+  "created": "2021-06-11T06:27:08.935462+00:00",
   "format": "json",
+  "last_modified": "2021-06-11T06:27:08.935462+00:00",
   "mimetype": null,
+  "name": "",
+  "path": "",
   "size": null,
-  "writable": true,
-  "type": "directory"
+  "type": "directory",
+  "writable": true
 }

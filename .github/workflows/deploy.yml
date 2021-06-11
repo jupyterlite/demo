@@ -21,11 +21,19 @@ jobs:
       - name: Copy the federated extensions
         run: |
           # TODO
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Create all.json
+        run: |
+          pip install jupyter_server
+          python all_generator.py
       - name: Copy the content
         run: |
           mkdir -p dist/api/contents/ dist/files
           cp all.json dist/api/contents/
-          cp *.csv *.ipynb dist/files
+          cp -r content/* dist/files/
       - name: List the content of the app
         run: |
           tree dist
