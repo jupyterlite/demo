@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Fetch the release
         run: |
-          curl -L https://github.com/jtpio/jupyterlite/releases/download/v0.1.0a0/jupyterlite-app-0.1.0-alpha.0.tgz | tar -xz
-          mv package dist
+          chmod u+x ./jupyterlite-install.sh
+          ./jupyterlite-install.sh
       - name: Copy the federated extensions
         run: |
           # TODO
@@ -25,15 +25,10 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: Create all.json
+      - name: Create manifest and stage
         run: |
-          pip install jupyter_server
-          python all_generator.py
-      - name: Copy the content
-        run: |
-          mkdir -p dist/api/contents/ dist/files
-          cp all.json dist/api/contents/
-          cp -r content/* dist/files/
+          chmod u+x ./deploy.sh
+          ./deploy.sh
       - name: List the content of the app
         run: |
           tree dist
