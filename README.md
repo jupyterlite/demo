@@ -19,20 +19,16 @@ JupyterLite is being tested against modern web browsers:
 
 This repository is meant to demo how to deploy JupyterLite to GitHub Pages, using the released prebuilt JupyterLite assets.
 
-⚠️ The configuration in this repo is under active development, and the deployment story will soon improve a lot with the help of convenient tools.
-
 For more info, keep an eye on the JupyterLite documentation:
 
 - Configuring: https://jupyterlite.readthedocs.io/en/latest/configuring.html
 - Deploying: https://jupyterlite.readthedocs.io/en/latest/deploying.html
 
-### Deploy a new version
+### Deploy a new version of JupyterLite
 
-In the deploy demo workflow (`deploy.yml`), update the version of JupyterLite: 
+To deploy a new version of JupyterLite, you can update the version in https://github.com/jtpio/jupyterlite-demo/blob/main/requirements.txt.
 
-https://github.com/jtpio/jupyterlite-demo/blob/1cf3ac239a67a869418541654385d1905dfbb5ab/.github/workflows/deploy.yml#L19
-
-Add notebooks and supporting files into the `content/` directory.
+The `requirements.txt` file can also be used to add extra JupyterLab extensions to the deployed JupyterLite website.
 
 Then commit and push the changes. The site will be deployed on the next push to the `main` branch.
 
@@ -41,8 +37,9 @@ Then commit and push the changes. The site will be deployed on the next push to 
 Create a new environment:
 
 ```bash
-mamba env update --file .binder/environment.yml
-mamba activate jupyterlite-dev
+mamba create -n jupyterlite-demo
+conda activate jupyterlite-demo
+pip install -r requirements.txt
 ```
 
-Then follow the steps documented in the [Configuring](https://jupyterlite.readthedocs.io/en/latest/configuring.html) section, to retrieve the list of federated extensions and settings and update `jupyter-lite.json`.
+Then follow the steps documented in the [Configuring](https://jupyterlite.readthedocs.io/en/latest/configuring.html) section.
