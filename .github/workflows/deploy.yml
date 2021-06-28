@@ -21,22 +21,21 @@ jobs:
       - name: Copy the federated extensions
         run: |
           # TODO
-      - name: setup python
+      - name: Setup Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: Create manifest and stage
+      - name: Install the dependencies
         run: |
-          chmod u+x ./deploy.sh
-          ./deploy.sh
-      - name: List the content of the app
+          python -m pip install -r requirements.txt
+      - name: Build the JupyterLite site
         run: |
-          tree dist
+          jupyter lite build --files content
       - name: Upload (dist)
         uses: actions/upload-artifact@v2
         with:
           name: jupyterlite-demo dist ${{ github.run_number }}
-          path: ./dist
+          path: ./_output
 
   deploy:
     if: github.ref == 'refs/heads/main'
