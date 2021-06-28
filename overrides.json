@@ -1,0 +1,5 @@
+{
+  "@jupyterlab/docmanager-extension:plugin": {
+    "nameFileOnSave": false
+  }
+}
