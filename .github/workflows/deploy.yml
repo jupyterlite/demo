@@ -14,13 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Fetch the release
-        run: |
-          chmod u+x ./jupyterlite-install.sh
-          ./jupyterlite-install.sh
-      - name: Copy the federated extensions
-        run: |
-          # TODO
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
