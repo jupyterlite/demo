@@ -1,8 +1,0 @@
-name: jupyterlite-demo
-channels:
-  - conda-forge/label/jupyterlab_alpha
-  - conda-forge
-dependencies:
-  - jupyterlab >=3.1.0a10,<4
-  - python >=3.8,<3.9
-  - jupyterlab-drawio

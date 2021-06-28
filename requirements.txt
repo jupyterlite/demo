@@ -1,0 +1,8 @@
+bqplot
+ipywidgets>=7.6
+ipycanvas
+ipyleaflet
+jupyterlab==3.1.0a13
+jupyterlab-drawio
+jupyterlite==0.1.0a1
+theme-darcula
