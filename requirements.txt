@@ -1,7 +1,8 @@
 bqplot
-ipywidgets>=7.6
 ipycanvas
 ipyleaflet
+ipywidgets>=7.6
+jupyterlab_miami_nights
 jupyterlab==3.1.0a13
 jupyterlab-drawio
 jupyterlite==0.1.0a2
