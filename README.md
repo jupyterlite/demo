@@ -19,6 +19,10 @@ JupyterLite is being tested against modern web browsers:
 
 This repository is meant to demo how to deploy JupyterLite to GitHub Pages, using the released prebuilt JupyterLite assets.
 
+To generate a new repository from this template, click on "Use this template":
+
+![template](https://user-images.githubusercontent.com/591645/124951037-4285d680-e013-11eb-8965-05db03d5841f.png)
+
 For more info, keep an eye on the JupyterLite documentation:
 
 - Configuring: https://jupyterlite.readthedocs.io/en/latest/configuring.html
