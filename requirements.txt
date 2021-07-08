@@ -7,3 +7,6 @@ jupyterlab==3.1.0a13
 jupyterlab-drawio
 jupyterlite==0.1.0a3
 theme-darcula
+jupyterlab-fasta>=3,<4
+jupyterlab-geojson>=3,<4
+plotly>=5,<6
