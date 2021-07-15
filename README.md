@@ -21,7 +21,7 @@ This repository is meant to demo how to deploy JupyterLite to GitHub Pages, usin
 
 To generate a new repository from this template, click on "Use this template":
 
-![template](https://user-images.githubusercontent.com/591645/124951037-4285d680-e013-11eb-8965-05db03d5841f.png)
+![template](https://user-images.githubusercontent.com/21197331/125816904-5768008a-77de-4cb3-8013-f3999b135c02.gif)
 
 For more info, keep an eye on the JupyterLite documentation:
 
