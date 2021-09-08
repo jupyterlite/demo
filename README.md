@@ -40,7 +40,9 @@ To use this repository to build your own release:
 - update the `requirements.txt` file as required (or just cancel the edit if you were simply forking the original repository);
 - remove unwanted notebooks from the `contents` directory;
 - upload your own notebooks intended for release to that directory;
-- make a pull request back to the main `jupyterlite-demo` repository.
+- from the *Pull Requests* tab of your Github repository, make a pull request of the changes you made back to the main `jupyterlite-demo` repository.
+
+![](https://user-images.githubusercontent.com/82988/132512423-ac5609b7-3e8e-4ea9-80ba-ddb08c9ffebb.png)
 
 The PR will trigger a build on the repository. Go to the [Actions tab](https://github.com/jupyterlite/demo/actions) and find the build triggered by your pull request. When the build has completed, the release will be available as a generated asset.
 
@@ -51,6 +53,8 @@ Download the distribution/generated asset and unzip it, for example into a direc
 If you have Python installed, on the command line change directory into the the unzipped distribution folder and run the command: `python -m http.server`. This will launch a web server from the directory, for example on port 8000. View the website in your browser (for example, at the web location `http://localhost:8000`).
 
 ### Using Your Own Repository to Build a Release and Deploy it to Github Pages
+
+*Requires Github account.*
 
 Click on "Use this template" to generate a repository of your own from this template:
 
