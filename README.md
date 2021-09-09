@@ -28,7 +28,6 @@ You can use this repository in two main ways:
 
 - generate a new repository from this template repository and build and deploy your own site to the corresponding Github Pages site;
 - build a release from a PR made to this repository and download the release from the created GitHub Actions artifact.
-- 
 
 ### Co-opting This Repository to Build a Distribution
 
