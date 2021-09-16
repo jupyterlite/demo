@@ -5,7 +5,7 @@ ipywidgets>=7.6
 jupyterlab_miami_nights
 jupyterlab~=3.1.0
 jupyterlab-drawio
-jupyterlite==0.1.0a6
+jupyterlite==0.1.0a8
 theme-darcula
 jupyterlab-fasta>=3,<4
 jupyterlab-geojson>=3,<4
