@@ -9,6 +9,7 @@ jupyterlab-language-pack-fr-FR
 jupyterlab-language-pack-zh-CN
 jupyterlab-fasta>=3,<4
 jupyterlab-geojson>=3,<4
+jupyterlab-tour
 jupyterlab_miami_nights
 jupyterlite==0.1.0a14
 jupyterlite-p5-kernel==0.1.0a12
