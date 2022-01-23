@@ -1,12 +1,19 @@
-# JupyterLite Demo
+# JupyterLite Demo + Quickstart
 
-JupyterLite deployed as a static site to GitHub Pages, for demo purposes.
+JupyterLite deployed as a static site to GitHub Pages, with custom example notebooks
 
 This fork of [jupyterlite/demo](https://github.com/jupyterlite/demo) tries to minimize the number of files+steps required to deploy your own Jupyterlite notebooks to GitHub Pages.
 
 Two approaches are described below:
-- ["Quickstart"](#quickstart) describes forking this repo (which automatically publishes a copy of Jupyterlite under your username), and then customizing the example notebooks presented to users who visit it (including allowing you to link people directly to static, interactive versions of notebooks you create)
-- ["Embed as a submodule inside an existing GitHub Pages site"](#embedded) describes how to embed a Jupyterlite bundle, including custom example notebooks, in an existing GitHub Pages site. 
+- ["Quickstart"](#quickstart)
+  - fork this repo (automatically publishes a copy of Jupyterlite under your username)
+  - customize the example notebooks under `content/`
+  - link people directly to static, interactive versions of notebooks you create
+  - Example: [runsascoded.github.io/jupyterlite-demo](https://runsascoded.github.io/jupyterlite-demo/)
+- ["Embed as a submodule inside an existing GitHub Pages site"](#embedded)
+  - embed a Jupyterlite bundle, including custom example notebooks, in an existing GitHub Pages site
+  - link people directly to static, interactive versions of notebooks you create
+  - Example: [runsascoded.com/jupyter/lite/](https://runsascoded.com/jupyter/lite/)
 
 ## Quickstart <a id="quickstart"></a>
 
