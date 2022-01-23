@@ -2,102 +2,100 @@
 
 JupyterLite deployed as a static site to GitHub Pages, for demo purposes.
 
-## ✨ Try it in your browser ✨
+This fork of [jupyterlite/demo](https://github.com/jupyterlite/demo) tries to minimize the number of files+steps required to deploy your own Jupyterlite notebooks to GitHub Pages.
 
-➡️ **https://jupyterlite.github.io/demo**
+Two approaches are described below:
+- ["Quickstart"](#quickstart) describes forking this repo (which automatically publishes a copy of Jupyterlite under your username), and then customizing the example notebooks presented to users who visit it (including allowing you to link people directly to static, interactive versions of notebooks you create)
+- ["Embed as a submodule inside an existing GitHub Pages site"](#embedded) describes how to embed a Jupyterlite bundle, including custom example notebooks, in an existing GitHub Pages site. 
 
-![github-pages](https://user-images.githubusercontent.com/591645/120649478-18258400-c47d-11eb-80e5-185e52ff2702.gif)
+## Quickstart <a id="quickstart"></a>
 
-## Requirements
+### Fork this repo (or [jupyterlite/demo](https://github.com/jupyterlite/demo))
+- [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml) will automatically build+publish to a new GitHub Pages site owned by your user/org  (e.g. this repo is deployed at [runsascoded.github.io/jupyterlite-demo](https://runsascoded.github.io/jupyterlite-demo/))
+- Specific notebooks can be linked to, in "retro" mode, like this: [runsascoded.github.io/jupyterlite-demo/retro/notebooks/?path=plotly-test.ipynb](https://runsascoded.github.io/jupyterlite-demo/retro/notebooks/?path=plotly-test.ipynb)
+- The [`content/`](./content) directory contains notebooks that the server is seeded with
+  - The GitHub Action picks them up [here](./.github/workflows/deploy.yml#L27) during the build process
+  - In this fork, there's just one notebook: [`content/plotly-test.ipynb`](./content/plotly-test.ipynb)
 
-JupyterLite is being tested against modern web browsers:
+### Add your own notebooks (for easy sharing)
+- add an `.ipynb` to the [`content/`](./content) folder
+  - copy an `.ipynb` from an existing repo, or
+  - create a notebook on any Jupyterlite instance and then download it
+- Add, commit, and push:
+    ```bash
+    git add content
+    git commit 'add notebook'
+    git push
+    ```
 
-- Firefox 90+
-- Chromium 89+
+Your fork's GitHub Action will build+publish a new Jupyterlite bundle (including your new notebooks).
 
-## Usage
+## Embed as a submodule inside an existing GitHub Pages site <a id="embedded"></a>
+You may want to publish a Jupyterlite bundle, including custom example notebooks, to a specific sub-path within an existing GitHub Pages site.
 
-This repository provides a demonstration of how to:
+One way to do this is:
+- add your fork of this repo as a submodule inside an existing GitHub Pages site dir
+- customize the example notebooks (in `content/`)
+- build and commit the bundle (within your submodule)
+- commit the new submodule state within the outer GitHub Pages site repo
 
-- build a JupyterLite release using prebuilt JupyterLite assets that bundles a collection of pre-existing Jupyter notebooks as part of the distribution;
-- deploy the release to GitHub Pages.
+The outer GitHub Pages repo will then include your Jupyterlite bundle, with custom example notebooks, at a sub-path of your choosing.
 
-The process is automated using Github Actions.
+For example:
+- here's a GitHub Pages site where I've embedded Jupyterlite at `/jupyter/lite`: [runsascoded.com/jupyter/lite/](https://runsascoded.com/jupyter/lite/)
+- here's a direct link to an example notebook there (in "retro" mode): [runsascoded.com/jupyter/lite/retro/notebooks/?path=plotly-test.ipynb](https://runsascoded.com/jupyter/lite/retro/notebooks/?path=plotly-test.ipynb)
 
-You can use this repository in two main ways:
+That GitHub Pages site is built from a private repo, and contains many projects embedded at different paths in this manner, which is a useful way to combine different repos into one GitHub Pages site.
 
-- generate a new repository from this template repository and build and deploy your own site to the corresponding Github Pages site;
-- build a release from a PR made to this repository and download the release from the created GitHub Actions artifact.
+Detailing the steps:
 
-### Co-opting This Repository to Build a Distribution
-
-*Requires Github account.*
-
-To use this repository to build your own release:
-
-- create a fork of this repository by clicking on one of the files (such as [`requirements.txt`](https://github.com/jupyterlite/demo/blob/main/requirements.txt) and then click on the *edit* button to create your own fork of the repository;
-- update the `requirements.txt` file as required (or just cancel the edit if you were simply forking the original repository);
-- remove unwanted notebooks from the `contents` directory;
-- upload your own notebooks intended for release to that directory;
-- from the *Pull Requests* tab of your Github repository, make a pull request of the changes you made back to the main `jupyterlite-demo` repository.
-
-![](https://user-images.githubusercontent.com/82988/132512423-ac5609b7-3e8e-4ea9-80ba-ddb08c9ffebb.png)
-
-The PR will trigger a build on the repository. Go to the [Actions tab](https://github.com/jupyterlite/demo/actions) and find the build triggered by your pull request. When the build has completed, the release will be available as a generated asset.
-
-![](https://user-images.githubusercontent.com/82988/132511258-aff31973-d7e2-4e39-89d5-3feb0ced139b.png)
-
-Download the distribution/generated asset and unzip it, for example into a directory of the form `jupyterlite-demo dist 46`. The directory contains your JupyterLite distribution. To run the distribution via a web browser, it needs to be served by a web server.
-
-If you have Python installed, on the command line change directory into the the unzipped distribution folder and run the command: `python -m http.server`. This will launch a web server from the directory, for example on port 8000. View the website in your browser (for example, at the web location `http://localhost:8000`).
-
-### Using Your Own Repository to Build a Release and Deploy it to Github Pages
-
-*Requires Github account.*
-
-Click on "Use this template" to generate a repository of your own from this template:
-
-![template](https://user-images.githubusercontent.com/21197331/125816904-5768008a-77de-4cb3-8013-f3999b135c02.gif)
-
-From the [*Actions*](./actions) tab on your repository, ensure that workflows are enabled. When you make a commit to the `main` branch, a Github Action will run to build your JupoyterLite release and deploy it to the repository's Github Pages site. By default, the Github Pages site will be found at `YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY-NAME`. *You can also check the URL from the Repository `Settings` tab `Pages` menu item.*
-
-__Add any additional requirements as required to the `requirements.txt` file.__
-
-*You can do this via the Github website by selecting the `requirements.txt` file, clicking to edit it, making the required changes then saving ("committing") the result to the `main` branch of your repository.*
-
-__Modify the contents of the `contents` folder to include the notebooks you want to distribute as part of your distribution.__
-
-*You can do this by clicking on the `contents` directory and dragging notebooks from your desktop onto the contents listing. Wait for the files to be uploaded and then save them ("commit" them) to the `main` branch of the repository.*
-
-Check that you have Github Pages enabled for your repository: from your repository [*Settings*](./settings) tab, select the [*Pages*](./settings/pages) menu item and ensure that the source is set to `gh-pages`.
-
-When you commit a file, an updated release will be built and published on the Github Pages site. Note that it may take a few minutes for the Github Pages site to be updated. Do a hard refresh on your Github Pages site in your web browser to see the new release.
-
-
-
-### Further Information and Updates
-
-For more info, keep an eye on the JupyterLite documentation:
-
-- Configuring: https://jupyterlite.readthedocs.io/en/latest/configuring.html
-- Deploying: https://jupyterlite.readthedocs.io/en/latest/deploying.html
-
-### Deploy a new version of JupyterLite
-
-To change the version of the prebuilt JupyterLite assets, update the `jupyterlite` package version in the [requirements.txt](./blob/main/requirements.txt) file.
-
-The `requirements.txt` file can also be used to add extra prebuilt ("federated") JupyterLab extensions to the deployed JupyterLite website.
-
-Commit and push any changes. The site will be deployed on the next push to the `main` branch.
-
-## Development
-
-Create a new environment:
-
+### Add your fork of this repo to an existing GitHub Pages site repo
+From within a directory published as a GitHub Pages site:
 ```bash
-mamba create -n jupyterlite-demo
-conda activate jupyterlite-demo
-pip install -r requirements.txt
+git submodule add https://github.com/<your username>/jupyterlite-demo.git jupyter
+cd jupyter
 ```
 
-Then follow the steps documented in the [Configuring](https://jupyterlite.readthedocs.io/en/latest/configuring.html) section.
+In this example, the source is cloned into `jupyter/`, and the built bundle will go in a further subdirectory called `lite/`, meaning the Jupyterlite bundle will be accessible in the existing GitHub Pages site at path `/jupyter/lite`, e.g. [runsascoded.com/jupyter/lite](https://runsascoded.com/jupyter/lite). Those directory names can be whatever you like, and you can make them two separate directories (so that the final path is only one level below the root, instead of two), if you like. 
+
+### Customize the example notebooks under `content/`
+```bash
+# remove the example notebook from this repo
+git rm content/plotly-test.ipynb
+
+# copy in a new example notebook from your Downloads folder
+cp ~/Downloads/<some notebook>.ipynb content/
+
+# Add/Commit/Push, within submodule
+git add content
+git commit -m 'Add my custom example notebook!'
+git push  
+```
+
+### Build Jupyterlite (including new example notebook)
+```bash
+pip install jupyterlite jupyterlab
+jupyter lite build --contents content --output-dir lite
+```
+
+`jupyterlite` is the main `pip` requirement, but `jupyterlab` is also required in order for the `jupyter lite build` to correctly index the example notebooks in `content/`, so that they get presented to users on the frontend (see [this jupyterlite#318 comment](https://github.com/jupyterlite/jupyterlite/issues/318#issuecomment-945492049)).
+
+### Commit+Push the built Jupyterlite bundle (in the submodule)
+At this point you have a bunch of files inside `lite/` now, that all need to get pushed (inside the submodule) and then included in the outer GitHub Pages repo:
+```bash
+git add lite
+git commit -m "Add built jupyterlite bundle"
+git push
+```
+This will be a huge number of files the first time, but should be many fewer in the future, when the built bundle is all there and you are just tweaking which example notebooks are presented.
+
+### Commit+Push the `jupyter` submodule (in the outer, GitHub Pages repo)
+Now we're ready to tell the GitHub Pages site to include the new files, and publish them:
+```bash
+cd ..  # move to the parent GitHub Pages repo
+git add jupyter  # add the changes to the `jupyter` submodule (your fork of this repo)
+git commit -m 'Add jupyterlite bundle'
+git push
+```
+
+That's it! You should have a Jupyterlite bundle, with custom example notebooks of your choosing, embedded within your GitHub Pages site at `/jupyter/lite`.
