@@ -1,10 +1,18 @@
 # JupyterLite Demo + Quickstart
 
-JupyterLite deployed as a static site to GitHub Pages, with custom example notebooks
+Deploy JupyterLite as a static site, with custom example notebooks
 
-This fork of [jupyterlite/demo](https://github.com/jupyterlite/demo) tries to minimize the number of files+steps required to deploy your own Jupyterlite notebooks to GitHub Pages.
+This fork of [jupyterlite/demo](https://github.com/jupyterlite/demo) tries to minimize the number of files+steps required to deploy your own Jupyterlite notebooks.
 
-Two approaches are described below:
+The simplest way to deploy Jupyterlite involves using the Python library to generate a static bundle:
+```bash
+mkdir content && cp <some notebook>.ipynb content/       # Create a directory with one or more example notebooks
+pip install jupyterlite jupyterlab                       # Install jupyterlite and jupyterlab (the latter is required for indexing the example notebooks)
+jupyter lite build --contents content --output-dir dist  # Build the bundle
+```
+At this point, `dist/` is a full static Jupyterlite bundle, including `<some notebook>.ipynb`, which you can copy to any static host. If you commit it to a location served by GitHub Pages, it will be served there!
+
+Two other approaches are described below:
 - ["Quickstart"](#quickstart)
   - fork this repo (automatically publishes a copy of Jupyterlite under your username)
   - customize the example notebooks under `content/`
@@ -24,10 +32,8 @@ Two approaches are described below:
   - The GitHub Action picks them up [here](./.github/workflows/deploy.yml#L27) during the build process
   - In this fork, there's just one notebook: [`content/plotly-test.ipynb`](./content/plotly-test.ipynb)
 
-### Add your own notebooks (for easy sharing)
+### Add your own notebook (for easy sharing)
 - add an `.ipynb` to the [`content/`](./content) folder
-  - copy an `.ipynb` from an existing repo, or
-  - create a notebook on any Jupyterlite instance and then download it
 - Add, commit, and push:
     ```bash
     git add content
