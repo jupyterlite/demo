@@ -11,7 +11,7 @@ jupyterlab-fasta>=3,<4
 jupyterlab-geojson>=3,<4
 jupyterlab-tour
 jupyterlab_miami_nights
-jupyterlite==0.1.0b0
+jupyterlite==0.1.0b2
 jupyterlite-p5-kernel==0.1.0a12
 jupyterlite-xeus-lua==0.2.0
 jupyterlite-xeus-wren==0.1.2
