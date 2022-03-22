@@ -3,7 +3,7 @@ ipycanvas>=0.9.1
 ipyleaflet
 ipympl>=0.8.2
 ipywidgets>=7.7,<8
-jupyterlab~=3.2.0
+jupyterlab~=3.3.0
 jupyterlab-drawio
 jupyterlab-language-pack-fr-FR
 jupyterlab-language-pack-zh-CN
@@ -13,8 +13,8 @@ jupyterlab-tour
 jupyterlab_miami_nights
 jupyterlite==0.1.0b4
 jupyterlite-p5-kernel==0.1.0a12
-jupyterlite-xeus-lua==0.2.0
-jupyterlite-xeus-wren==0.1.2
-jupyterlite-xeus-sqlite==0.1.2
+jupyterlite-xeus-lua==0.3.0
+jupyterlite-xeus-wren==0.2.0
+jupyterlite-xeus-sqlite==0.2.0
 plotly>=5,<6
 theme-darcula
