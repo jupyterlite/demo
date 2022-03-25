@@ -5,6 +5,7 @@ ipympl>=0.8.2
 ipywidgets>=7.7,<8
 jupyterlab~=3.3.0
 jupyterlab-drawio
+jupyterlab-git
 jupyterlab-language-pack-fr-FR
 jupyterlab-language-pack-zh-CN
 jupyterlab-fasta>=3,<4
