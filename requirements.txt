@@ -1,5 +1,6 @@
 bqplot
 ipycanvas>=0.9.1
+ipyevents>=2.0.1
 ipyleaflet
 ipympl>=0.8.2
 ipywidgets>=7.7,<8
