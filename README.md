@@ -31,28 +31,6 @@ You can use this repository in two main ways:
 - generate a new repository from this template repository and build and deploy your own site to the corresponding Github Pages site;
 - build a release from a PR made to this repository and download the release from the created GitHub Actions artifact.
 
-### Co-opting This Repository to Build a Distribution
-
-*Requires Github account.*
-
-To use this repository to build your own release:
-
-- create a fork of this repository by clicking on one of the files (such as [`requirements.txt`](https://github.com/jupyterlite/demo/blob/main/requirements.txt) and then click on the *edit* button to create your own fork of the repository;
-- update the `requirements.txt` file as required (or just cancel the edit if you were simply forking the original repository);
-- remove unwanted notebooks from the `contents` directory;
-- upload your own notebooks intended for release to that directory;
-- from the *Pull Requests* tab of your Github repository, make a pull request of the changes you made back to the main `jupyterlite-demo` repository.
-
-![](https://user-images.githubusercontent.com/82988/132512423-ac5609b7-3e8e-4ea9-80ba-ddb08c9ffebb.png)
-
-The PR will trigger a build on the repository. Go to the [Actions tab](https://github.com/jupyterlite/demo/actions) and find the build triggered by your pull request. When the build has completed, the release will be available as a generated asset.
-
-![](https://user-images.githubusercontent.com/82988/132511258-aff31973-d7e2-4e39-89d5-3feb0ced139b.png)
-
-Download the distribution/generated asset and unzip it, for example into a directory of the form `jupyterlite-demo dist 46`. The directory contains your JupyterLite distribution. To run the distribution via a web browser, it needs to be served by a web server.
-
-If you have Python installed, on the command line change directory into the the unzipped distribution folder and run the command: `python -m http.server`. This will launch a web server from the directory, for example on port 8000. View the website in your browser (for example, at the web location `http://localhost:8000`).
-
 ### Using Your Own Repository to Build a Release and Deploy it to Github Pages
 
 *Requires Github account.*
