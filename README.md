@@ -41,6 +41,9 @@ Click on "Use this template" to generate a repository of your own from this temp
 
 From the [*Actions*](./actions) tab on your repository, ensure that workflows are enabled. When you make a commit to the `main` branch, a Github Action will run to build your JupoyterLite release and deploy it to the repository's Github Pages site. By default, the Github Pages site will be found at `YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY-NAME`. *You can also check the URL from the Repository `Settings` tab `Pages` menu item.*
 
+If the deployment failed, go to "Settings - Actions - General", in the "Workflow permissions" section, check "Read and write permissions". Update files such as readme, and commit so that GitHub rebuids and re-deploys the project. Go to "Settings - Pages", choose "gh-pages" as the source.
+
+
 __Add any additional requirements as required to the `requirements.txt` file.__
 
 *You can do this via the Github website by selecting the `requirements.txt` file, clicking to edit it, making the required changes then saving ("committing") the result to the `main` branch of your repository.*
