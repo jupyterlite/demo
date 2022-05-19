@@ -14,8 +14,8 @@ jupyterlab-tour
 jupyterlab_miami_nights
 jupyterlite==0.1.0b7
 jupyterlite-p5-kernel==0.1.0a12
-jupyterlite-xeus-lua==0.3.0
-jupyterlite-xeus-wren==0.2.0
-jupyterlite-xeus-sqlite==0.2.0
+jupyterlite-xeus-lua==0.3.1
+jupyterlite-xeus-wren==0.2.1
+jupyterlite-xeus-sqlite==0.2.1
 plotly>=5,<6
 theme-darcula
