@@ -24,26 +24,25 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           cp README.md content
-          jupyter lite build --contents content
-      - name: Upload (dist)
-        uses: actions/upload-artifact@v2
+          jupyter lite build --contents content --output-dir dist
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: jupyterlite-demo-dist-${{ github.run_number }}
-          path: ./_output
+          path: ./dist
 
   deploy:
+    needs: build
     if: github.ref == 'refs/heads/main'
-    needs: [build]
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2.3.1
-      - uses: actions/download-artifact@v2
-        with:
-          name: jupyterlite-demo-dist-${{ github.run_number }}
-          path: ./dist
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.3
-        with:
-          branch: gh-pages
-          folder: dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
