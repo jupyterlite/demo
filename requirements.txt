@@ -4,7 +4,7 @@ ipyevents>=2.0.1
 ipyleaflet
 ipympl>=0.8.2
 ipywidgets>=8.0.0,<9
-jupyterlab~=3.5.0
+jupyterlab~=3.5.1
 jupyterlab-drawio
 jupyterlab-language-pack-fr-FR
 jupyterlab-language-pack-zh-CN
@@ -12,7 +12,7 @@ jupyterlab-fasta>=3,<4
 jupyterlab-geojson>=3,<4
 jupyterlab-tour
 jupyterlab_miami_nights
-jupyterlite==0.1.0b15
+jupyterlite==0.1.0b16
 jupyterlite-p5-kernel==0.1.0a12
 jupyterlite-xeus-lua==0.3.1
 jupyterlite-xeus-wren==0.2.1
