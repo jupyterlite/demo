@@ -19,10 +19,10 @@ git clean -f
 git rm --cached deploy-ghp.sh
 git commit -m "Remove deploy script"
 
-# put all repo files/dif in .gitignore
-ls -aI .gitignore -I . -I .. > .gitignore
+# remove all but deploy script
+rm -rf .github content repl .gitignore .jupyterlite.doit.db deploy-ghp.bat README.md requirements.txt
 
-# only files/dir from ./docs/.vitepress/dist will be commited
+# only files/dir from ./dist will be commited
 cp -r ./dist/* ./
 
 git add .

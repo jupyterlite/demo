@@ -6,32 +6,22 @@ git branch -D gh-pages
 
 git checkout --orphan gh-pages
 
-git rm --cached -rf . 
+git rm --cached -rf .
 
-git add deploy-ghp.bat
+git add deploy-ghp.sh
 git commit -m "Add deploy script"
 
-REM git clean -n
+# git clean -n
 git clean -f
 
-git rm --cached deploy-ghp.bat
+git rm --cached deploy-ghp.sh
 git commit -m "Remove deploy script"
 
-REM delete folders/files
-rd /s /q ph_tools
-del README.md requirements.txt pyproject.toml setup.py
+REM remove all but deploy script
+rm -rf .github content repl .gitignore .jupyterlite.doit.db deploy-ghp.bat README.md requirements.txt
 
-REM only files/dir from .\doc will be commited
-xcopy /s doc .
-copy index.html 404.html
-
-echo doc > .gitignore
-echo build >> .gitignore
-echo dist >> .gitignore
-echo wip >> .gitignore
-echo utils >> .gitignore
-echo scripts-* >> .gitignore
-echo *.egg-info >> .gitignore
+REM only files/dir from ./dist will be commited
+cp -r ./dist/* ./
 
 git add .
 git commit -m "Deploy"

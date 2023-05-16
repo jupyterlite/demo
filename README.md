@@ -58,6 +58,7 @@ jupyter lite build --contents content --output-dir dist
 - git commit and push to your repo:
 
 ```sh
+git init
 git add . && git commit -m "Init"
 git remote add origin https://github.com/[YOURNAME]/jupyterlite-demo.git
 git branch -M main
@@ -74,7 +75,7 @@ git push -u origin main
 deploy-ghp.batch
 ```
 
-- Visit gh-pages static site: https://github.
+- Visit gh-pages static site: `https://[YOURNAME].github.io/[YOURREPO]`.
 
 ## Further Information and Updates
 
