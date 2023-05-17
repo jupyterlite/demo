@@ -55,6 +55,14 @@ This section does the same as the Github Action based automatic build & deploy d
   jupyter lite build --contents content --output-dir dist
   ```
 
+- Serve static site in `./dist` locally:
+
+  ```sh
+  python -m http.server -d dist 3000
+  ```
+
+  Visit http://localhost:3000
+
 - git commit and push to your repo:
 
   ```sh
@@ -65,14 +73,6 @@ This section does the same as the Github Action based automatic build & deploy d
   git push -u origin main
   ```
 
-- Serve static site in `./dist` locally:
-
-  ```sh
-  python -m http.server -d dist 3000
-  ```
-
-  Visit http://localhost:3000
-
 - Deploy static site in `./dist` to GitHub Pages:
 
   ```sh
@@ -80,7 +80,7 @@ This section does the same as the Github Action based automatic build & deploy d
   . ./deploy-ghp.sh
 
   # win
-  deploy-ghp.batch
+  deploy-ghp.bath
   ```
 
   Visit [gh-pages](https://docs.github.com/en/pages) static site: `https://[YOURNAME].github.io/[YOURREPO]`.
