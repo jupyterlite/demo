@@ -27,55 +27,63 @@ This section does the same as the Github Action based automatic build & deploy d
 
 - git clone the repo:
 
-```sh
-mkdir work-zone # a working dir
-cd work-zone
+  ```sh
+  mkdir work-zone # a working dir
+  cd work-zone
 
-git clone https://github.com/jupyterlite/demo.git
-cd demo
-rm -rf .git
-```
+  git clone https://github.com/jupyterlite/demo.git
+  cd demo
+  rm -rf .git
+  ```
 
 - Create a dedicated conda/mamba env:
 
-```sh
-conda create -n lite-demo python=3.10 -y
-conda activate lite-demo
-pip install -r requirements.txt
-```
+  ```sh
+  conda create -n lite-demo python=3.10 -y
+  conda activate lite-demo
+  pip install -r requirements.txt
+  ```
 
 - Build jupyterlite static site:
 
-```sh
-# rm to start from clean sheet
-rm ./.jupyterlite.doit.db
-rm -rf ./dist
-rm -rf ./lite/.cache
+  ```sh
+  # rm to start from clean sheet
+  rm ./.jupyterlite.doit.db
+  rm -rf ./dist
+  rm -rf ./lite/.cache
 
-jupyter lite build --contents content --output-dir dist
-```
+  jupyter lite build --contents content --output-dir dist
+  ```
 
 - git commit and push to your repo:
 
-```sh
-git init
-git add . && git commit -m "Init"
-git remote add origin https://github.com/[YOURNAME]/jupyterlite-demo.git
-git branch -M main
-git push -u origin main
-```
+  ```sh
+  git init
+  git add . && git commit -m "Init"
+  git remote add origin https://github.com/[YOURNAME]/jupyterlite-demo.git
+  git branch -M main
+  git push -u origin main
+  ```
+
+- Serve static site in `./dist` locally:
+
+  ```sh
+  python -m http.server -d dist 3000
+  ```
+
+  Visit http://localhost:3000
 
 - Deploy static site in `./dist` to GitHub Pages:
 
-```sh
-# linux
-. ./deploy-ghp.sh
+  ```sh
+  # linux
+  . ./deploy-ghp.sh
 
-# win
-deploy-ghp.batch
-```
+  # win
+  deploy-ghp.batch
+  ```
 
-- Visit gh-pages static site: `https://[YOURNAME].github.io/[YOURREPO]`.
+  Visit [gh-pages](https://docs.github.com/en/pages) static site: `https://[YOURNAME].github.io/[YOURREPO]`.
 
 ## Further Information and Updates
 
