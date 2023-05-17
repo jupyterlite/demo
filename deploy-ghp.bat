@@ -18,7 +18,7 @@ git rm --cached deploy-ghp.sh
 git commit -m "Remove deploy script"
 
 REM remove all but deploy script
-rm -rf .github content repl .gitignore .jupyterlite.doit.db deploy-ghp.bat README.md requirements.txt
+rm -rf .github content repl .gitignore .jupyterlite.doit.db deploy-ghp.sh README.md requirements.txt
 
 REM only files/dir from ./dist will be commited
 cp -r ./dist/* ./
