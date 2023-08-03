@@ -3,10 +3,10 @@ jupyterlite-core==0.1.1
 jupyterlab~=3.5.1
 
 # Python kernel (optional)
-jupyterlite-pyodide-kernel==0.0.9
+jupyterlite-pyodide-kernel==0.0.10
 
 # JavaScript kernel (optional)
-jupyterlite-javascript-kernel==0.1.0b21
+jupyterlite-javascript-kernel==0.1.1
 
 # Language support (optional)
 jupyterlab-language-pack-fr-FR
