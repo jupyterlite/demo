@@ -20,9 +20,9 @@ jupyterlite-p5-kernel==0.1.0
 jupyterlite-xeus-lua==0.3.1
 
 # JupyterLab: Fasta file renderer (optional)
-jupyterlab-fasta>=4,<5
+jupyterlab-fasta>=3.3.0,<4
 # JupyterLab: Geojson file renderer (optional)
-jupyterlab-geojson>=4,<5
+jupyterlab-geojson>=3.4.0,<4
 # JupyterLab: guided tour (optional)
 jupyterlab-tour
 # JupyterLab: dark theme
