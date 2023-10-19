@@ -1,5 +1,5 @@
 # Core modules (mandatory)
-jupyterlite-core==0.2.0a3
+jupyterlite-core==0.2.0rc0
 jupyterlab~=4.0.6
 
 
