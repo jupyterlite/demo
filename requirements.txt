@@ -1,14 +1,14 @@
 # Core modules (mandatory)
-jupyterlite-core==0.2.3
-jupyterlab~=4.0.11
-notebook~=7.0.7
+jupyterlite-core==0.3.0
+jupyterlab~=4.1.5
+notebook~=7.1.2
 
 
 # Python kernel (optional)
-jupyterlite-pyodide-kernel==0.2.3
+jupyterlite-pyodide-kernel==0.3.0
 
 # JavaScript kernel (optional)
-jupyterlite-javascript-kernel==0.2.3
+jupyterlite-javascript-kernel==0.3.0
 
 # Language support (optional)
 jupyterlab-language-pack-fr-FR
