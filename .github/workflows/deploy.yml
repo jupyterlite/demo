@@ -26,6 +26,7 @@ jobs:
           mkdir -p jupyterlite/dist
           mkdir -p jupyterlite/content
           cp README.md jupyterlite/content
+          cp content/python.ipynb jupyterlite/content
           jupyter lite build --contents jupyterlite/content --output-dir jupyterlite/dist
       - name: Put other content in place (dummy for now)
         run: |
