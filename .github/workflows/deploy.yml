@@ -27,14 +27,14 @@ jobs:
           mkdir -p jupyterlite-output/jlite  # root directory for Jupyter lite
           mkdir -p jupyterlite-output/content
           jupyter lite build --contents jupyterlite-sources/content --output-dir jupyterlite-output/jlite
-      - name: Put other content in place (dummy for now)
-        run: |
-          cp other-content/index.html jupyterlite
 
       - name: gather-outputs created into pages
         run: |
           mkdir -p pages
+          # from Jupyter lite build
           cp -av jupyterlite-output/* pages
+          # override index.html
+          cp other-content/index.html pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
