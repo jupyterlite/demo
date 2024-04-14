@@ -26,7 +26,6 @@ jobs:
           # mkdir -p jupyterlite # root output directory
           mkdir -p jupyterlite/jlite  # root directory for Jupyter lite
           mkdir -p jupyterlite/content
-          cp README.md jupyterlite-sources/content
           jupyter lite build --contents jupyterlite-sources/content --output-dir jupyterlite/jlite
       - name: Put other content in place (dummy for now)
         run: |
