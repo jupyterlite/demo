@@ -1,0 +1,14 @@
+* Overall strategy: separate Docker containers for development and mybinder
+
+This repository uses a Dockerfile in the root directory for development
+purposes. This includes translation of the source files (in book/*ipynb) to html
+and pdf (using jupyterbook), which in turns needs a full latex installation.
+
+That makes the container quite big.
+
+For myBinder, we do not need latex, so in this directory, we attempt to have a
+leaner definition of dependencies.
+
+Binder should look in this directory (as it is called 'binder') and ignore the
+global Dockerfile.
+

@@ -1,0 +1,15 @@
+/* suppress table of contents on the right in
+   pdf created from html */
+
+@media print {
+    .bd-toc {
+        visibility: hidden;
+    }
+}
+
+
+/* 
+p {
+    text-align: justify;
+}
+*/

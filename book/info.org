@@ -1,0 +1,19 @@
+* <2022-01-05 Wed 07:42> Notes on nbval:
+
+** Chapters with matplotlib output
+- for chapter 15 (matplotlib) [and other with matplotlib], we run into fails if svg+xml output is saved
+  - For some of the fails, I have created entries in [file:static/nbvas_sanitize.cfg] to ignore the changes (and commented out)
+- Update on closer inspection: in the past, we didn't save the output, and thus the problem never occurred.
+- But what does nbval do if the cells are empty, and it computes output?    
+  - if we do not save output, then nbval will not complain about the empty cells
+  - if an exception occurs, it will report a fail.
+  - So --nbval on empty output cells behaves like --nbval-lax on saved output
+- So not saving the output might be the right way, as jupyter-book executes the
+  notebooks anyway when computing pdf and html
+  (And that's what we did before my recent changes, I just had to remind myself ...)
+
+** Extra treatment of Chapter 18 Environments
+  - should not execute automatically (because the description of creating
+    virtual envs is tailored to running it on a mac with Anaconda).
+  - achieved via instruction in [file:_config.yml]
+  - should be skipped by nbval for same reasons (use --ignore switch for that)

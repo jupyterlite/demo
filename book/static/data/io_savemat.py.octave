@@ -1,0 +1,50 @@
+
+HAL47:code fangohr$ octave
+GNU Octave, version 3.2.4
+Copyright (C) 2009 John W. Eaton and others.
+<snip>
+
+octave:1> whos
+Variables in the current scope:
+
+  Attr Name        Size                     Bytes  Class
+  ==== ====        ====                     =====  ===== 
+       ans         1x11                        92  cell
+
+Total is 11 elements using 92 bytes
+
+octave:2> load data.mat
+octave:3> whos
+Variables in the current scope:
+
+  Attr Name        Size                     Bytes  Class
+  ==== ====        ====                     =====  ===== 
+       a          11x1                         88  double
+       ans         1x11                        92  cell
+       b           4x4                        128  double
+
+Total is 38 elements using 308 bytes
+
+octave:4> a
+a =
+
+    0
+    5
+   10
+   15
+   20
+   25
+   30
+   35
+   40
+   45
+   50
+
+octave:5> b
+b =
+
+   1   1   1   1
+   1   1   1   1
+   1   1   1   1
+   1   1   1   1
+

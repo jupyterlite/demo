@@ -1,0 +1,101 @@
+((* extends 'article.tplx' *))
+
+((* block docclass *))
+\documentclass[a4paper,11pt]{article}
+((* endblock docclass *))
+
+((* block header *))
+((( super() )))
+\usepackage{amssymb}% for numbers/numbers
+\usepackage{amsmath} % NSOB.  For SymPy chapter (LaTeX-output section)
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+
+\setlength{\textheight}{24cm}
+\setlength{\textwidth}{16cm}
+% my format of pages
+\setlength{\textheight}{24cm}
+\setlength{\textwidth}{17cm}
+
+%%Double sided printing:
+%\setlength{\evensidemargin}{-0.54cm}
+%\setlength{\oddsidemargin}{0.46cm}
+
+
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\setlength{\topmargin}{-0.3cm}
+%\setlength{\parindent}{0cm}
+
+
+\usepackage{listings}
+\usepackage{color}
+\lstdefinestyle{defaultstyle}{}
+\lstset{language=Python}
+\lstset{basicstyle=\ttfamily}
+\lstset{showstringspaces=fales}
+\lstset{keywordstyle=\color{blue}}
+\lstset{frame=single}
+\lstset{backgroundcolor=\color{white},emph={EMPTY},emphstyle=\color{white}}
+\definecolor{lightgrey}{cmyk}{0.05,0.05,0.05,0}
+
+\lstset{backgroundcolor=\color{lightgrey}}
+\newcommand{\py}[1]{\texttt{\color{blue}#1}}
+\newcommand{\myhtmlniceskip}{\vspace{1pt}}
+\newcommand{\furtherinfosep}{\medskip}
+
+
+\newcommand{\htmllink}[2]{\href{#2}{#1}}
+
+
+%Example:
+% \href{https://nmag.soton.ac.uk}{nmag}
+% \htmllink{nmag}{https://nmag.soton.ac.uk}
+
+
+%Eiter use html
+%\usepackage{html}
+%
+% or redefine commands
+%\newcommand{\htmladdnormallink}[2]{#1}
+
+
+
+\usepackage{hyperref}
+
+\renewcommand{\labelitemii}{\ensuremath{\triangleright}}    %  open triangle replaces default dash
+
+
+
+\usepackage{graphicx}
+((* endblock header *))
+
+((* block predoc *))
+
+\title{
+\sffamily Introduction to \\[0.5cm]
+\textbf{\sffamily \huge Python for Computational Science and Engineering}\\[0.5cm]
+\sffamily(A beginner's guide to Python~3)}
+
+\author{
+\centerline{\Oldincludegraphics[width=0.4\textwidth]{static/images/mayavi/mayavi-samp.png}}\\[1cm]
+\sffamily Prof Hans Fangohr \\[0.3cm]
+\sffamily Faculty of Engineering and the Environment\\
+\sffamily University of Southampton\\
+\sffamily United Kingdom\\[0.3cm]
+\sffamily and\\[0.3cm]
+\sffamily European XFEL GmbH\\
+\sffamily Schenefeld\\
+\sffamily Germany\\[0.3cm]
+}
+
+\date{ \sffamily \today \\[3cm]
+\sffamily Download Juptyer Notebook files, pdf and html files of this book from\\
+\sffamily \href{https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering/blob/master/Readme.md}{https://github.com/fangohr/introduction-to-python-for-computational-science-and-engineering}
+} % end of \date
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+((* endblock predoc *))

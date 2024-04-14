@@ -1,0 +1,7 @@
+- [ ] check that saving notebooks without output (15, 16, 17) works fine with binder
+- [ ] check binder once merged
+- [ ] move footnotes from end of text into the right places
+
+- [ ] html output on https://fangohr.github.io/introduction-to-python-for-computational-science-and-engineering
+  - [ ] add links in the right places
+

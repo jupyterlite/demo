@@ -1,0 +1,74 @@
+name: Create and deploy html and pdf on gh-pages
+
+on:
+  release:
+    types: [created]
+  push:
+    # all
+  workflow_dispatch:
+
+jobs:
+  docker-build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Cache Docker layers
+      uses: actions/cache@v4
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-${{ hashFiles('poetry.lock') }}
+
+    #  This build and push step does the same thing as `make docker-build`, but
+    #  makes it easier to store and load caches, which is why we use it instead
+    - name: Build and Save Layers Locally
+      uses: docker/build-push-action@v5
+      with:
+        context: ./
+        file: ./Dockerfile
+        load: true
+        cache-from: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,dest=/tmp/.buildx-cache
+        tags: python4compscience
+
+    - name: List Available Images
+      run: docker images
+
+    - name: Make Docker HTML (JBook---create html)
+      run: make docker-html
+
+    - name: Check links - Markdown
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+
+    - name: Make Docker Linkcheck
+      run: make docker-linkcheck
+
+    - name: Make Docker PDF  (JBook---create pdf)
+      run: |
+        make docker-pdf
+        sudo cp -v book/_build/latex/book.pdf book/_build/html/book.pdf
+
+    - name: Gather outputs in pages
+      run: |
+        mkdir -p pages
+        cp -av book/_build/html/* pages
+        cp -av book/_build/latex/book.pdf pages
+
+    # Deploy output to gh-pages branch
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./pages
+
+    - uses: marvinpinto/action-automatic-releases@latest
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        title: "Development Build"
+        files: book/_build/latex/book.pdf

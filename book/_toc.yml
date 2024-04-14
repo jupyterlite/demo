@@ -1,0 +1,25 @@
+format: jb-book
+root: opening
+options:
+  numbered: true
+chapters:
+- file: 01-introduction
+- file: 02-powerful-calculator
+- file: 03-data-types-structures
+- file: 04-introspection
+- file: 05-input-output
+- file: 06-control-flow
+- file: 07-functions-modules
+- file: 08-functional-tools
+- file: 09-common-tasks
+- file: 10-matlab-to-python
+- file: 11-python-shells
+- file: 12-symbolic-computation
+- file: 13-numeric-computation
+- file: 14-numpy
+- file: 15-visualising-data
+- file: 16-scipy
+- file: 17-pandas
+- file: 18-environments
+- file: 19-next-steps
+- file: 99-changes

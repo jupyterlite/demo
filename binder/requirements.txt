@@ -1,0 +1,9 @@
+numpy
+scipy
+sympy
+matplotlib
+pandas
+pyarrow
+ipython
+pytest
+nbval
