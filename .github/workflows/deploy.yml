@@ -27,6 +27,10 @@ jobs:
           mkdir -p jupyterlite/content
           cp README.md jupyterlite/content
           jupyter lite build --contents jupyterlite/content --output-dir jupyterlite/dist
+      - name: Put other content in place (dummy for now)
+        run: |
+          cp other-content/index.html jupyterlite
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
