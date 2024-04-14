@@ -34,7 +34,7 @@ jobs:
       - name: gather-outputs created into pages
         run: |
           mkdir -p pages
-          cp -av jupyterlite-output pages
+          cp -av jupyterlite-output/* pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
