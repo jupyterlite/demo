@@ -23,11 +23,11 @@ jobs:
           python -m pip install -r requirements-jupyterlite.txt
       - name: Build the JupyterLite site
         run: |
-          mkdir -p jupyterlite/dist
+          mkdir -p jupyterlite/jlite
           mkdir -p jupyterlite/content
           cp README.md jupyterlite/content
           cp content/python.ipynb jupyterlite/content
-          jupyter lite build --contents jupyterlite/content --output-dir jupyterlite/dist
+          jupyter lite build --contents jupyterlite/content --output-dir jupyterlite/jlite
       - name: Put other content in place (dummy for now)
         run: |
           cp other-content/index.html jupyterlite
