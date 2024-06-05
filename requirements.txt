@@ -5,7 +5,7 @@ notebook~=7.1.2
 
 
 # Python kernel (optional)
-jupyterlite-pyodide-kernel==0.3.1
+jupyterlite-pyodide-kernel==0.3.2
 
 # JavaScript kernel (optional)
 jupyterlite-javascript-kernel==0.3.0
