@@ -1,11 +1,11 @@
 # Core modules (mandatory)
-jupyterlite-core==0.5.0
-jupyterlab~=4.3.4
-notebook~=7.3.2
+jupyterlite-core==0.6.0
+jupyterlab~=4.4.3
+notebook~=7.4.3
 
 
 # Python kernel (optional)
-jupyterlite-pyodide-kernel==0.5.0
+jupyterlite-pyodide-kernel==0.6.0
 
 # JavaScript kernel (optional)
 jupyterlite-javascript-kernel==0.3.0
@@ -40,5 +40,5 @@ ipycanvas>=0.9.1
 ipyleaflet
 
 # Python: plotting libraries (optional)
-plotly>=5,<6
+plotly>=6,<7
 bqplot
