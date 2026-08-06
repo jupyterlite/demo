@@ -6,18 +6,22 @@ on:
       - main
   pull_request:
     branches:
-      - '*'
+      - "*"
+
+permissions: {}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          python-version: '3.11'
+          persist-credentials: false
+      - name: Setup Python
+        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5
+        with:
+          python-version: "3.11"
       - name: Install the dependencies
         run: |
           python -m pip install -r requirements.txt
@@ -26,7 +30,7 @@ jobs:
           cp README.md content
           jupyter lite build --contents content --output-dir dist
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: ./dist
 
@@ -45,4 +49,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
